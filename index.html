@@ -114,7 +114,7 @@
 
     <!-- Scene 1 -->
     <div id="scene-1" class="scene">
-        <h1>yk whats today</h1>
+        <h1>(tap)</h1>
     </div>
 
     <!-- Scene 2 -->
@@ -137,10 +137,15 @@
         </video>
         <h1>mera storage full ho jayega lala tere vid se</h1>
     </div>
+    
+    <!-- Scene 5 (New final scene) -->
+    <div id="scene-5" class="scene">
+        <h1>me is very greatfuel to have u </h1>
+    </div>
 
     <!-- Media elements -->
     <audio id="background-audio" loop>
-        <source src="https://github.com/barelyastro/happibdaytannudi/blob/main/r.mp3">
+        <source src="https://raw.githubusercontent.com/barelyastro/happibdaytannudi/main/r.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -191,7 +196,14 @@
                     video2.play().catch(e => console.log("Video 2 couldn't play."));
                     break;
                 case 4:
+                    // Show the new final scene
                     scenes[3].style.display = 'none';
+                    video2.style.display = 'none'; // Hide second video
+                    scenes[4].style.display = 'flex';
+                    break;
+                case 5:
+                    // Reset after the final scene
+                    scenes[4].style.display = 'none';
                     audio.pause();
                     audio.currentTime = 0;
                     if (heartInterval) {
